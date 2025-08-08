@@ -51,7 +51,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 2rem;
             position: relative;
@@ -289,6 +289,39 @@
         .project-desc {
             color: var(--text);
             opacity: 0.8;
+        }
+
+        /* Computational Art */
+        .art-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .art-card {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .art-card:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .art-title {
+            padding: 0.75rem 1rem;
+            color: var(--primary);
+            font-weight: bold;
+            border-bottom: 1px solid var(--secondary);
+            background: rgba(0, 255, 65, 0.03);
+        }
+
+        .art-canvas {
+            height: 260px;
+            position: relative;
         }
 
         /* Experience */
@@ -617,7 +650,7 @@
         <div class="terminal-body" id="main-content">
             <!-- Home Page Content -->
             <h1>Davontae Jackson</h1>
-            <p class="tagline typing">Full Stack Software Engineer</p>
+            <p class="tagline typing">Engineer, Artist, Writer</p>
             
             <!-- Contact Section -->
             <div class="contact-links">
@@ -628,28 +661,7 @@
             <!-- About Section -->
             <div class="section">
                 <h2 class="section-title">About</h2>
-                <p>Full Stack Engineer with experience leading end-to-end product and platform initiatives. Strong in backend, frontend, and platform engineering. Known for driving company-wide adoption of critical infrastructure and building high-impact, scalable solutions. Experience with creating agentic systems.</p>
-            </div>
-            
-            <!-- Skills Section -->
-            <div class="section">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills">
-                    <span class="skill">TypeScript</span>
-                    <span class="skill">Python</span>
-                    <span class="skill">Git</span>
-                    <span class="skill">GraphQL</span>
-                    <span class="skill">PostgreSQL</span>
-                    <span class="skill">Docker</span>
-                    <span class="skill">Kubernetes</span>
-                    <span class="skill">FastAPI</span>
-                    <span class="skill">Redis</span>
-                    <span class="skill">LLM/AI tooling</span>
-                    <span class="skill">CI/CD pipelines</span>
-                    <span class="skill">React</span>
-                    <span class="skill">GCP</span>
-                    <span class="skill">AWS</span>
-                </div>
+                <p>Engineer obsessed with building the future. Exploring agentic systems that can reason, plan, and act. Using AI to explore deeper questions about the universe, running hands-on experiments and distilling them into clear assertions that I share through my writing.</p>
             </div>
             
             <!-- Projects Section -->
@@ -658,7 +670,7 @@
                 <div class="projects">
                     <div class="project">
                         <div class="project-header">
-                            <span class="project-name">TracePulse</span>
+                            <span class="project-name">TracePulse (PAUSED)</span>
                             <a href="https://github.com/theworksofvon/tracepulse" target="_blank" class="project-link">View on GitHub →</a>
                         </div>
                         <p class="project-desc">AI-powered production debugging CLI tool providing real-time context for coding assistants. Built with TypeScript, OpenTelemetry, and GPT-4 for intelligent root cause analysis.</p>
@@ -671,23 +683,20 @@
                         </div>
                         <p class="project-desc">AI-powered NBA analytics platform that fine-tunes LLMs on historical player data. Features an "Agency" framework for iterative predictions, deployed on self-hosted Kubernetes.</p>
                     </div>
-                    
                     <div class="project">
                         <div class="project-header">
-                            <span class="project-name">KoraWellness</span>
-                            <a href="https://korawellness.app" target="_blank" class="project-link">korawellness.app →</a>
+                            <span class="project-name">Prediction Benchmark</span>
+                            <a href="#" class="project-link">Docs coming soon →</a>
                         </div>
-                        <p class="project-desc">Mental wellness application leveraging AI to provide personalized support and resources for mental health journey.</p>
-                    </div>
-                    
-                    <div class="project">
-                        <div class="project-header">
-                            <span class="project-name">CareerHunter</span>
-                            <a href="https://career-hunter.com" target="_blank" class="project-link">career-hunter.com →</a>
-                        </div>
-                        <p class="project-desc">Job search platform designed to streamline the career hunting process with intelligent matching and application tracking.</p>
+                        <p class="project-desc">A "true AGI" prediction benchmark. Using Pluto, I run standardized tests across different models with the same tools and the same data to see which systems can predict the correct value most consistently.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Computational Art Section -->
+            <div class="section">
+                <h2 class="section-title">Computational Art</h2>
+                <div class="art-grid" id="art-grid"></div>
             </div>
             
             <!-- Blog Section -->
@@ -803,363 +812,38 @@
     </script>
 
     <!-- ============================================ -->
-    <!-- BLOG DATA                                    -->
+    <!-- BLOG LOADER                                  -->
     <!-- ============================================ -->
-    <script id="blog-data">
-        // Blog post data - Easy to add new posts here
-        const blogPosts = {
-            'agentic-systems': {
-                title: 'Building Agentic Systems with LLMs',
-                date: '2025.01.15',
-                category: 'AI/ML',
-                readTime: '8 min read',
-                content: `
-                    <p>After spending the last year building autonomous AI systems, I've learned that creating truly agentic systems requires more than just prompting an LLM. It's about architecting systems that can reason, plan, and execute tasks independently.</p>
-                    
-                    <h2>What Makes a System "Agentic"?</h2>
-                    <p>An agentic system goes beyond simple question-answering. It exhibits autonomous behavior through:</p>
-                    <ul>
-                        <li>Goal-oriented planning and execution</li>
-                        <li>Dynamic tool selection and usage</li>
-                        <li>Self-reflection and error correction</li>
-                        <li>Memory and context management</li>
-                    </ul>
-                    
-                    <h2>The Agency Framework</h2>
-                    <p>In building PlutoPredicts, I developed what I call the "Agency Framework" - a pattern for creating LLM-powered agents that can iteratively improve their predictions.</p>
-                    
-                    <pre><code>class Agent:
-    def __init__(self, llm, tools, memory):
-        self.llm = llm
-        self.tools = tools
-        self.memory = memory
-        
-    async def execute(self, task):
-        plan = await self.create_plan(task)
-        results = []
-        
-        for step in plan:
-            result = await self.execute_step(step)
-            self.memory.add(step, result)
-            
-            if not self.validate_result(result):
-                revised_plan = await self.revise_plan(plan, step, result)
-                plan = revised_plan
-                
-            results.append(result)
-            
-        return self.synthesize_results(results)</code></pre>
-                    
-                    <h2>Key Lessons Learned</h2>
-                    <p>Building production-ready agentic systems taught me several crucial lessons:</p>
-                    
-                    <h3>1. Tool Design is Critical</h3>
-                    <p>The tools you provide to your agent define its capabilities. Well-designed tools should be:</p>
-                    <ul>
-                        <li>Atomic - do one thing well</li>
-                        <li>Composable - work together seamlessly</li>
-                        <li>Failsafe - handle errors gracefully</li>
-                    </ul>
-                    
-                    <h3>2. Memory Management Matters</h3>
-                    <p>Agents need both short-term working memory and long-term knowledge storage. I use a hybrid approach:</p>
-                    <pre><code>memory_system = {
-    "working": Redis(),  # Fast, temporary storage
-    "episodic": PostgreSQL(),  # Structured event history
-    "semantic": VectorDB()  # Embedding-based retrieval
-}</code></pre>
-                    
-                    <h3>3. Observability is Non-Negotiable</h3>
-                    <p>When agents make autonomous decisions, you need to understand why. This led me to build TracePulse - a tool specifically for debugging agentic systems in production.</p>
-                    
-                    <blockquote>
-                        "The best agentic systems are not the ones that always succeed, but the ones that fail gracefully and learn from their mistakes."
-                    </blockquote>
-                    
-                    <h2>Looking Forward</h2>
-                    <p>The future of software development increasingly involves AI agents working alongside humans. As we build these systems, we must focus on making them reliable, interpretable, and aligned with human intentions.</p>
-                    
-                    <p>I'm currently exploring multi-agent orchestration patterns and would love to hear about your experiences building agentic systems. Feel free to reach out!</p>
-                `
-            },
-            'event-driven': {
-                title: 'Event-Driven Architecture with NATS JetStream',
-                date: '2024.12.20',
-                category: 'Platform Engineering',
-                readTime: '10 min read',
-                content: `
-                    <p>When we started experiencing data loss and synchronization issues across our microservices at Powerflex, I knew we needed a fundamental architectural change. This is the story of how we migrated to NATS JetStream and achieved zero event loss.</p>
-                    
-                    <h2>The Problem</h2>
-                    <p>Our original architecture used REST APIs for service communication. This led to:</p>
-                    <ul>
-                        <li>Tight coupling between services</li>
-                        <li>Cascading failures during outages</li>
-                        <li>No guaranteed message delivery</li>
-                        <li>Difficult debugging of distributed transactions</li>
-                    </ul>
-                    
-                    <h2>Why NATS JetStream?</h2>
-                    <p>After evaluating Kafka, RabbitMQ, and others, we chose NATS JetStream for its:</p>
-                    <ul>
-                        <li>Simplicity - single binary, no ZooKeeper</li>
-                        <li>Performance - handles millions of messages/second</li>
-                        <li>Built-in persistence and replay</li>
-                        <li>Excellent Go and Python clients</li>
-                    </ul>
-                    
-                    <h2>Implementation Strategy</h2>
-                    <p>Rolling out event-driven architecture across an entire engineering organization requires careful planning.</p>
-                    
-                    <h3>Phase 1: Building the Foundation</h3>
-                    <pre><code># Internal library for standardized NATS integration
-class NATSClient:
-    def __init__(self, config):
-        self.js = nats.connect(config.servers).jetstream()
-        
-    async def publish(self, subject, event):
-        # Add metadata, validation, and retry logic
-        enriched_event = self._enrich_event(event)
-        await self.js.publish(subject, enriched_event)
-        
-    async def subscribe(self, subject, handler):
-        # Handle deduplication, ordering, and error recovery
-        await self.js.subscribe(
-            subject,
-            cb=self._wrap_handler(handler),
-            durable=True,
-            deliver_policy=DeliverPolicy.ALL
-        )</code></pre>
-                    
-                    <h3>Phase 2: Service Migration</h3>
-                    <p>We migrated services incrementally using the Strangler Fig pattern:</p>
-                    <ol>
-                        <li>New features use events exclusively</li>
-                        <li>Add event publishers alongside existing REST endpoints</li>
-                        <li>Migrate consumers to event subscriptions</li>
-                        <li>Deprecate REST endpoints</li>
-                    </ol>
-                    
-                    <h2>Achieving Zero Event Loss</h2>
-                    <p>The key to zero event loss is proper stream configuration:</p>
-                    <pre><code>stream_config = {
-    "name": "ORDERS",
-    "subjects": ["orders.>"],
-    "retention": "limits",
-    "max_age": 30 * 24 * 60 * 60,  # 30 days
-    "max_msgs_per_subject": 1_000_000,
-    "duplicate_window": 2 * 60,  # 2 minutes
-    "storage": "file",
-    "num_replicas": 3
-}</code></pre>
-                    
-                    <h2>Monitoring and Observability</h2>
-                    <p>We built comprehensive monitoring using:</p>
-                    <ul>
-                        <li>Prometheus metrics for queue depths and latencies</li>
-                        <li>Grafana dashboards for real-time visibility</li>
-                        <li>Custom alerts for consumer lag</li>
-                        <li>Distributed tracing with OpenTelemetry</li>
-                    </ul>
-                    
-                    <h2>Results</h2>
-                    <p>After 6 months of migration:</p>
-                    <ul>
-                        <li><strong>100% message delivery</strong> - zero events lost</li>
-                        <li><strong>75% reduction</strong> in inter-service latency</li>
-                        <li><strong>90% faster</strong> feature development</li>
-                        <li><strong>50% reduction</strong> in production incidents</li>
-                    </ul>
-                    
-                    <blockquote>
-                        "The best part isn't the technology - it's how event-driven thinking changed how our engineers design systems."
-                    </blockquote>
-                    
-                    <h2>Lessons Learned</h2>
-                    <ol>
-                        <li><strong>Start with a solid foundation</strong> - invest in libraries and tooling early</li>
-                        <li><strong>Education is crucial</strong> - run workshops on event-driven patterns</li>
-                        <li><strong>Monitor everything</strong> - you can't debug what you can't see</li>
-                        <li><strong>Plan for failure</strong> - design for eventual consistency</li>
-                    </ol>
-                    
-                    <p>Event-driven architecture with NATS JetStream transformed how we build distributed systems. If you're facing similar challenges, I'd be happy to share more details about our journey.</p>
-                `
-            },
-            'self-hosting': {
-                title: 'Self-Hosting AI Models on Kubernetes',
-                date: '2024.11.08',
-                category: 'DevOps',
-                readTime: '12 min read',
-                content: `
-                    <p>Running your own AI infrastructure might seem daunting, but with Kubernetes and some careful planning, you can deploy production-ready LLMs at a fraction of the cost of API services. Here's how I built a self-hosted AI platform.</p>
-                    
-                    <h2>Why Self-Host?</h2>
-                    <p>While OpenAI and Anthropic APIs are excellent, self-hosting offers:</p>
-                    <ul>
-                        <li>Cost savings at scale (90% reduction for us)</li>
-                        <li>Complete data privacy and compliance</li>
-                        <li>Custom model fine-tuning</li>
-                        <li>No rate limits or quotas</li>
-                    </ul>
-                    
-                    <h2>Hardware Selection</h2>
-                    <p>For our cluster, I chose:</p>
-                    <pre><code>Master Nodes (3x):
-- CPU: AMD EPYC 7343 (16 cores)
-- RAM: 64GB DDR4
-- Storage: 1TB NVMe
+    <script src="/blog/blog-loader.js"></script>
 
-Worker Nodes (4x):
-- GPU: NVIDIA A100 80GB
-- CPU: AMD EPYC 7543 (32 cores)  
-- RAM: 512GB DDR4
-- Storage: 4TB NVMe</code></pre>
-                    
-                    <h2>Kubernetes Setup</h2>
-                    <p>The key to running AI workloads on K8s is proper resource management:</p>
-                    
-                    <h3>GPU Operator</h3>
-                    <pre><code># Install NVIDIA GPU Operator
-helm install gpu-operator nvidia/gpu-operator \\
-  --namespace gpu-operator \\
-  --create-namespace \\
-  --set driver.enabled=true \\
-  --set toolkit.enabled=true</code></pre>
-                    
-                    <h3>Model Deployment</h3>
-                    <p>I use a custom CRD for model deployments:</p>
-                    <pre><code>apiVersion: ai.platform/v1
-kind: ModelDeployment
-metadata:
-  name: llama-70b
-spec:
-  model:
-    repository: "huggingface/meta-llama/Llama-2-70b-hf"
-    quantization: "int8"
-  replicas: 2
-  resources:
-    gpu: 2
-    memory: "160Gi"
-  autoscaling:
-    enabled: true
-    minReplicas: 1
-    maxReplicas: 4
-    targetGPUUtilization: 80</code></pre>
-                    
-                    <h2>Serving Infrastructure</h2>
-                    <p>For model serving, I built a stack using:</p>
-                    <ul>
-                        <li><strong>vLLM</strong> - High-performance inference engine</li>
-                        <li><strong>Ray</strong> - Distributed computing for scaling</li>
-                        <li><strong>FastAPI</strong> - REST API layer</li>
-                        <li><strong>Redis</strong> - Response caching</li>
-                    </ul>
-                    
-                    <h3>Inference Server</h3>
-                    <pre><code>from vllm import LLM, SamplingParams
-from fastapi import FastAPI
-import ray
-
-ray.init(address="ray://ray-head:10001")
-
-@ray.remote(num_gpus=1)
-class ModelServer:
-    def __init__(self, model_name):
-        self.llm = LLM(model_name, tensor_parallel_size=2)
-    
-    async def generate(self, prompt, params):
-        sampling_params = SamplingParams(**params)
-        outputs = self.llm.generate([prompt], sampling_params)
-        return outputs[0].outputs[0].text
-
-app = FastAPI()
-model_server = ModelServer.remote("meta-llama/Llama-2-70b-hf")
-
-@app.post("/generate")
-async def generate(prompt: str, **kwargs):
-    result = await model_server.generate.remote(prompt, kwargs)
-    return {"text": ray.get(result)}</code></pre>
-                    
-                    <h2>Cost Optimization</h2>
-                    <p>Key strategies for reducing costs:</p>
-                    
-                    <h3>1. Model Quantization</h3>
-                    <p>Reduce model size without significant quality loss:</p>
-                    <ul>
-                        <li>INT8: 50% size reduction, <2% quality loss</li>
-                        <li>INT4: 75% size reduction, 5-10% quality loss</li>
-                    </ul>
-                    
-                    <h3>2. Intelligent Caching</h3>
-                    <pre><code># Cache similar prompts with embedding similarity
-@cache(ttl=3600, similarity_threshold=0.95)
-async def cached_generate(prompt, params):
-    embedding = embed(prompt)
-    cached = await redis.get_similar(embedding)
-    if cached:
-        return cached
-    result = await generate(prompt, params)
-    await redis.set_with_embedding(embedding, result)
-    return result</code></pre>
-                    
-                    <h3>3. Spot Instances</h3>
-                    <p>Use spot instances for non-critical workloads with proper interruption handling.</p>
-                    
-                    <h2>Monitoring and Observability</h2>
-                    <p>Essential metrics to track:</p>
-                    <ul>
-                        <li>Tokens per second (throughput)</li>
-                        <li>Time to first token (latency)</li>
-                        <li>GPU memory utilization</li>
-                        <li>Queue depth and wait times</li>
-                    </ul>
-                    
-                    <h2>Results</h2>
-                    <p>Our self-hosted platform now handles:</p>
-                    <ul>
-                        <li>10M+ tokens/day</li>
-                        <li>P95 latency: 200ms</li>
-                        <li>99.9% uptime</li>
-                        <li>$0.0002/1k tokens (vs $0.002 for APIs)</li>
-                    </ul>
-                    
-                    <blockquote>
-                        "The complexity of self-hosting is front-loaded. Once running, it's remarkably stable and cost-effective."
-                    </blockquote>
-                    
-                    <h2>Getting Started</h2>
-                    <p>If you're considering self-hosting, start small:</p>
-                    <ol>
-                        <li>Run a 7B parameter model on a single GPU</li>
-                        <li>Set up basic monitoring and caching</li>
-                        <li>Scale horizontally as demand grows</li>
-                        <li>Optimize with quantization and batching</li>
-                    </ol>
-                    
-                    <p>Self-hosting AI models is a journey, but the control and cost savings make it worthwhile for many use cases. Happy to answer questions about specific challenges you might face!</p>
-                `
-            }
-        };
-    </script>
+    <!-- ============================================ -->
+    <!-- P5.JS + ART SKETCHES                         -->
+    <!-- ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <script src="/art/art-loader.js"></script>
 
     <!-- ============================================ -->
     <!-- BLOG NAVIGATION SCRIPT                       -->
     <!-- ============================================ -->
     <script id="blog-navigation">
-        // Store original content
         let originalContent = '';
         
-        // Blog functionality
-        function showBlogPost(postId) {
-            const post = blogPosts[postId];
-            if (!post) return;
+        async function showBlogPost(postId) {
+            const post = await window.blogLoader.getPost(postId);
+            if (!post) {
+                console.error('Blog post not found:', postId);
+                return;
+            }
             
             const mainContent = document.getElementById('main-content');
             
-            // Save original content if not already saved
             if (!originalContent) {
                 originalContent = mainContent.innerHTML;
+            }
+            
+            // Stop any running art sketches before replacing DOM
+            if (window.artLoader && window.artLoader.clearInstances) {
+                try { window.artLoader.clearInstances(); } catch (e) { console.error('Art clear failed', e); }
             }
             
             mainContent.innerHTML = `
@@ -1203,7 +887,38 @@ async def cached_generate(prompt, params):
             const mainContent = document.getElementById('main-content');
             mainContent.innerHTML = originalContent;
             window.scrollTo(0, 0);
+            // Reinitialize computational art after restoring home
+            if (window.artLoader && window.artLoader.renderGrid) {
+                try { window.artLoader.renderGrid(); } catch (e) { console.error('Art render failed', e); }
+            }
         }
+
+        // Initialize blog posts dynamically
+        async function initializeBlog() {
+            try {
+                const posts = await window.blogLoader.getPosts();
+                const blogPostsContainer = document.querySelector('.blog-posts');
+                
+                if (blogPostsContainer && posts.length > 0) {
+                    blogPostsContainer.innerHTML = posts.map(post => `
+                        <div class="blog-post">
+                            <div class="blog-header">
+                                <span class="blog-date">${post.date}</span>
+                                <span class="blog-category">${post.category}</span>
+                            </div>
+                            <h3 class="blog-title">${post.title}</h3>
+                            <p class="blog-excerpt">${post.excerpt}</p>
+                            <a href="#" class="blog-link" onclick="showBlogPost('${post.id}'); return false;">Read more →</a>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Failed to initialize blog:', error);
+            }
+        }
+
+        // Initialize blog when page loads
+        document.addEventListener('DOMContentLoaded', initializeBlog);
     </script>
 </body>
 </html>

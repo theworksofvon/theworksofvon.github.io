@@ -1,0 +1,13 @@
+[
+  {
+    "id": "neon-orbits",
+    "title": "Neon Orbits",
+    "script": "/art/sketches/neon-orbits.js"
+  },
+  {
+    "id": "matrix-flow",
+    "title": "Matrix Flow",
+    "script": "/art/sketches/matrix-flow.js"
+  }
+]
+
