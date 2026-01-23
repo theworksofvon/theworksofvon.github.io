@@ -3,26 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>theworksofvon</title>
-    <link rel="icon" type="image/png" href="/public/dj_creates.png">
-    <!-- ============================================ -->
-    <!-- THEME VARIABLES                              -->
-    <!-- ============================================ -->
-    <style id="theme-variables">
-        :root {
-            --primary: #00ff41;
-            --secondary: #008f11;
-            --bg: #0a0a0a;
-            --surface: #1a1a1a;
-            --text: #e0e0e0;
-            --accent: #ff0080;
-        }
-    </style>
+    <title>von/portfolio/</title>
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <!-- ============================================ -->
-    <!-- BASE STYLES                                  -->
-    <!-- ============================================ -->
-    <style id="base-styles">
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -30,533 +17,314 @@
         }
 
         body {
-            font-family: 'Courier New', monospace;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Glowing cursor effect */
-        body::before {
-            content: '';
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-            opacity: 0.1;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: all 0.3s ease;
-            z-index: 1;
+            font-family: 'Space Mono', monospace;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.7;
+            font-size: 15px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 640px;
             margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
+            padding: 4rem 2rem;
         }
 
-        /* Matrix rain effect background */
-        .matrix-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0.05;
-            z-index: 0;
-        }
-    </style>
-
-    <!-- ============================================ -->
-    <!-- TERMINAL STYLES                              -->
-    <!-- ============================================ -->
-    <style id="terminal-styles">
-        .terminal-header {
-            background: var(--surface);
-            padding: 0.5rem 1rem;
-            border-radius: 8px 8px 0 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: 1px solid var(--secondary);
-            border-bottom: none;
+        /* Header */
+        .header {
+            margin-bottom: 3rem;
         }
 
-        .site-logo {
-            height: 28px;
-            width: auto;
-            margin-left: auto;
-            filter: drop-shadow(0 0 6px rgba(0,255,65,0.35));
-        }
-
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        .terminal-dot:nth-child(2) {
-            background: #ffbd2e;
-        }
-
-        .terminal-dot:nth-child(3) {
-            background: var(--primary);
-        }
-
-        .terminal-body {
-            background: var(--surface);
-            border: 1px solid var(--secondary);
-            border-top: none;
-            border-radius: 0 0 8px 8px;
-            padding: 2rem;
-            min-height: calc(100vh - 8rem);
-        }
-    </style>
-
-    <!-- ============================================ -->
-    <!-- TYPOGRAPHY STYLES                            -->
-    <!-- ============================================ -->
-    <style id="typography-styles">
-        h1 {
-            color: var(--primary);
-            font-size: 2.5rem;
+        .name {
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
-            text-shadow: 0 0 10px var(--primary);
-            animation: glitch 3s infinite;
-        }
-
-        @keyframes glitch {
-            0%, 100% { text-shadow: 0 0 10px var(--primary); }
-            25% { text-shadow: -2px 0 var(--accent), 2px 0 var(--secondary); }
-            50% { text-shadow: 2px 0 var(--accent), -2px 0 var(--secondary); }
-            75% { text-shadow: 0 0 10px var(--primary); }
+            color: #e5e5e5;
         }
 
         .tagline {
-            color: var(--secondary);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
+            color: #737373;
+            font-size: 0.9rem;
         }
 
-        .typing::after {
-            content: '_';
-            animation: blink 1s infinite;
+        /* Links */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
         }
 
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+        .social-links a {
+            color: #a3a3a3;
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease, color 0.2s ease;
         }
 
+        .social-links a:hover {
+            color: #e5e5e5;
+            border-bottom-color: #e5e5e5;
+        }
+
+        /* Sections */
         .section {
-            margin: 3rem 0;
+            margin-bottom: 3rem;
         }
 
         .section-title {
-            color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #525252;
             margin-bottom: 1rem;
+        }
+
+        /* About */
+        .about p {
+            color: #a3a3a3;
+        }
+
+        /* Projects Graveyard */
+        .projects-list {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 1rem;
         }
 
-        .section-title::before {
-            content: '>';
-            color: var(--accent);
-        }
-    </style>
-
-    <!-- ============================================ -->
-    <!-- COMPONENT STYLES                             -->
-    <!-- ============================================ -->
-    <style id="component-styles">
-        /* Contact Links */
-        .contact-links {
+        .project-item {
             display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .contact-links a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .contact-links a:hover {
-            color: var(--accent);
-            text-shadow: 0 0 5px currentColor;
-        }
-
-        .contact-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background: currentColor;
-            transition: width 0.3s ease;
-        }
-
-        .contact-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Skills */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
+            align-items: flex-start;
             gap: 1rem;
         }
 
-        .skill {
-            background: rgba(0, 255, 65, 0.1);
-            border: 1px solid var(--secondary);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
+        .project-status {
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-top: 0.5rem;
         }
 
-        .skill:hover {
-            background: rgba(0, 255, 65, 0.2);
-            border-color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 255, 65, 0.3);
+        .project-status.live {
+            background: #22c55e;
+            box-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
         }
 
-        /* Projects */
-        .projects {
-            display: grid;
-            gap: 1.5rem;
+        .project-status.dead {
+            background: #dc2626;
         }
 
-        .project {
-            background: rgba(0, 255, 65, 0.05);
-            border: 1px solid var(--secondary);
-            padding: 1.5rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .project:hover::before {
-            left: 100%;
-        }
-
-        .project:hover {
-            border-color: var(--primary);
-            transform: translateX(5px);
+        .project-content {
+            flex: 1;
         }
 
         .project-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.5rem;
+            gap: 0.75rem;
+            flex-wrap: wrap;
         }
 
         .project-name {
-            color: var(--primary);
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-weight: 700;
+            color: #e5e5e5;
         }
 
-        .project-link {
-            color: var(--accent);
+        .project-name a {
+            color: inherit;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
         }
 
-        .project-link:hover {
-            color: var(--primary);
+        .project-name a:hover {
+            border-bottom-color: #e5e5e5;
+        }
+
+        .project-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .project-label.live {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+        }
+
+        .project-label.dead {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
         }
 
         .project-desc {
-            color: var(--text);
-            opacity: 0.8;
-        }
-
-        /* Computational Art */
-        .art-grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .art-card {
-            background: rgba(0, 255, 65, 0.05);
-            border: 1px solid var(--secondary);
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-            transition: border-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .art-card:hover {
-            border-color: var(--primary);
-            transform: translateX(5px);
-        }
-
-        .art-title {
-            padding: 0.75rem 1rem;
-            color: var(--primary);
-            font-weight: bold;
-            border-bottom: 1px solid var(--secondary);
-            background: rgba(0, 255, 65, 0.03);
-        }
-
-        .art-canvas {
-            height: 260px;
-            position: relative;
-        }
-
-        /* Experience */
-        .experience {
-            border-left: 2px solid var(--secondary);
-            padding-left: 2rem;
-            margin-left: 1rem;
-        }
-
-        .experience-item {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: var(--primary);
-            border-radius: 50%;
-            left: -2.35rem;
-            top: 0.5rem;
-            box-shadow: 0 0 10px var(--primary);
-        }
-
-        .experience-title {
-            color: var(--primary);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-company {
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-date {
-            color: var(--secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-    </style>
-
-    <!-- ============================================ -->
-    <!-- BLOG STYLES                                  -->
-    <!-- ============================================ -->
-    <style id="blog-styles">
-        /* Blog list view */
-        .blog-posts {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .blog-post {
-            background: rgba(0, 255, 65, 0.03);
-            border: 1px solid var(--secondary);
-            padding: 1.5rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .blog-post:hover {
-            border-color: var(--primary);
-            background: rgba(0, 255, 65, 0.08);
-            transform: translateX(5px);
-        }
-
-        .blog-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.75rem;
+            color: #737373;
             font-size: 0.85rem;
+            margin-top: 0.25rem;
         }
 
-        .blog-date {
-            color: var(--secondary);
-            font-family: 'Courier New', monospace;
+        /* Blog */
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
         }
 
-        .blog-category {
-            color: var(--accent);
-            padding: 0.2rem 0.6rem;
-            border: 1px solid var(--accent);
-            border-radius: 3px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
+        .blog-item {
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .blog-item:hover {
+            opacity: 0.7;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: #525252;
+            margin-bottom: 0.25rem;
         }
 
         .blog-title {
-            color: var(--primary);
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            font-weight: bold;
+            font-weight: 700;
+            color: #e5e5e5;
         }
 
-        .blog-excerpt {
-            color: var(--text);
-            opacity: 0.8;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .blog-link {
-            color: var(--primary);
+        .blog-title a {
+            color: inherit;
             text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .blog-title a:hover {
+            border-bottom-color: #e5e5e5;
+        }
+
+        /* Experience */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .experience-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .experience-role {
+            font-weight: 700;
+            color: #e5e5e5;
+        }
+
+        .experience-company {
+            color: #737373;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-            position: relative;
         }
 
-        .blog-link:hover {
-            color: var(--accent);
-            transform: translateX(5px);
+        .experience-date {
+            color: #525252;
+            font-size: 0.8rem;
         }
 
-        .blog-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background: currentColor;
-            transition: width 0.3s ease;
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #262626;
+            color: #525252;
+            font-size: 0.8rem;
         }
 
-        .blog-link:hover::after {
-            width: calc(100% - 20px);
-        }
-
-        /* Blog full post view */
+        /* Blog Full Post View */
         .blog-full-post {
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.3s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .blog-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--secondary);
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .back-button {
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            transition: all 0.3s ease;
+            color: #737373;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
             cursor: pointer;
             background: none;
             border: none;
-            font-family: 'Courier New', monospace;
-            font-size: 1rem;
+            font-family: 'Space Mono', monospace;
+            transition: color 0.2s ease;
         }
 
         .back-button:hover {
-            color: var(--accent);
-            transform: translateX(-5px);
-        }
-
-        .blog-post-header {
-            margin-bottom: 2rem;
+            color: #e5e5e5;
         }
 
         .blog-post-title {
-            color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            line-height: 1.3;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e5e5e5;
         }
 
         .blog-post-meta {
             display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            color: var(--secondary);
-            font-size: 0.9rem;
+            gap: 1rem;
+            color: #525252;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
         }
 
         .blog-post-content {
-            color: var(--text);
-            line-height: 1.8;
-            font-size: 1.05rem;
+            color: #a3a3a3;
         }
 
         .blog-post-content h2 {
-            color: var(--primary);
+            font-size: 1.2rem;
             margin: 2rem 0 1rem 0;
-            font-size: 1.5rem;
+            color: #e5e5e5;
         }
 
         .blog-post-content h3 {
-            color: var(--primary);
+            font-size: 1rem;
             margin: 1.5rem 0 0.75rem 0;
-            font-size: 1.25rem;
+            color: #e5e5e5;
         }
 
         .blog-post-content p {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
 
         .blog-post-content pre {
-            background: var(--bg);
-            border: 1px solid var(--secondary);
+            background: #171717;
+            border: 1px solid #262626;
             border-radius: 4px;
             padding: 1rem;
             overflow-x: auto;
             margin: 1.5rem 0;
+            font-size: 0.85rem;
         }
 
         .blog-post-content code {
-            background: rgba(0, 255, 65, 0.1);
-            padding: 0.2rem 0.4rem;
+            background: #171717;
+            padding: 0.15rem 0.3rem;
             border-radius: 3px;
-            font-family: 'Courier New', monospace;
             font-size: 0.9em;
         }
 
@@ -566,365 +334,249 @@
         }
 
         .blog-post-content blockquote {
-            border-left: 3px solid var(--primary);
-            padding-left: 1.5rem;
+            border-left: 2px solid #262626;
+            padding-left: 1rem;
             margin: 1.5rem 0;
-            color: var(--text);
-            opacity: 0.9;
+            color: #737373;
             font-style: italic;
         }
 
         .blog-post-content ul, .blog-post-content ol {
-            margin-bottom: 1.25rem;
-            padding-left: 2rem;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
         }
 
         .blog-post-content li {
             margin-bottom: 0.5rem;
         }
 
-        .blog-footer {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--secondary);
-            text-align: center;
-        }
-
-        .share-text {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
         .hidden {
             display: none;
         }
-    </style>
 
-    <!-- ============================================ -->
-    <!-- RESPONSIVE STYLES                            -->
-    <!-- ============================================ -->
-    <style id="responsive-styles">
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
+        /* Responsive */
+        @media (max-width: 640px) {
             .container {
-                padding: 1rem;
+                padding: 2rem 1.5rem;
             }
-            
-            .terminal-body {
-                padding: 1rem;
-            }
-            
-            .experience {
-                padding-left: 1rem;
-                margin-left: 0.5rem;
-            }
-            
-            .experience-item::before {
-                left: -1.35rem;
-            }
-        }
-    </style>
 
-    <!-- ============================================ -->
-    <!-- UTILITY STYLES                               -->
-    <!-- ============================================ -->
-    <style id="utility-styles">
-        /* CSS variable support for mouse position */
-        body::before {
-            left: var(--mouse-x, 50%);
-            top: var(--mouse-y, 50%);
+            .name {
+                font-size: 1.3rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- ============================================ -->
-    <!-- BACKGROUND EFFECTS                           -->
-    <!-- ============================================ -->
-    <canvas class="matrix-bg" id="matrix"></canvas>
-    
-    <!-- ============================================ -->
-    <!-- MAIN CONTAINER                               -->
-    <!-- ============================================ -->
     <div class="container">
-        <div class="terminal-header">
-            <div class="terminal-dot"></div>
-            <div class="terminal-dot"></div>
-            <div class="terminal-dot"></div>
-            <img class="site-logo" src="/public/dj_creates.png" alt="theworksofvon logo" />
-        </div>
-        
-        <div class="terminal-body" id="main-content">
-            <!-- Home Page Content -->
-            <h1>Davontae Jackson</h1>
-            <p class="tagline typing">Engineer, Artist, Writer</p>
-            
-            <!-- Contact Section -->
-            <div class="contact-links">
-                <a href="mailto:davontaejackson67@gmail.com">davontaejackson67@gmail.com</a>
-                <a href="https://github.com/theworksofvon" target="_blank">github.com/theworksofvon</a>
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Davontae Jackson</h1>
+            <p class="tagline">Engineer & Writer</p>
+            <div class="social-links">
+                <a href="mailto:jacksondavontae19@gmail.com">email</a>
+                <a href="https://github.com/theworksofvon" target="_blank">github</a>
+                <a href="https://linkedin.com/in/davontaejackson" target="_blank">linkedin</a>
+                <a href="https://ek-labs.com" target="_blank">ek-labs</a>
             </div>
-            
-            <!-- About Section -->
-            <div class="section">
-                <h2 class="section-title">About</h2>
-                <p>Engineer obsessed with building the future. Exploring agentic systems that can reason, plan, and act. Using AI to explore deeper questions about the universe, running hands-on experiments and distilling them into clear assertions that I share through my writing.</p>
-            </div>
-            
-            <!-- Projects Section -->
-            <div class="section">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects">
-                    <div class="project">
-                        <div class="project-header">
-                            <span class="project-name">TracePulse (PAUSED)</span>
-                            <a href="https://github.com/theworksofvon/tracepulse" target="_blank" class="project-link">View on GitHub →</a>
-                        </div>
-                        <p class="project-desc">AI-powered production debugging CLI tool providing real-time context for coding assistants. Built with TypeScript, OpenTelemetry, and GPT-4 for intelligent root cause analysis.</p>
-                    </div>
-                    
-                    <div class="project">
-                        <div class="project-header">
-                            <span class="project-name">PlutoPredicts</span>
-                            <a href="https://plutopredicts.com" target="_blank" class="project-link">plutopredicts.com →</a>
-                        </div>
-                        <p class="project-desc">AI-powered NBA analytics platform that fine-tunes LLMs on historical player data. Features an "Agency" framework for iterative predictions, deployed on self-hosted Kubernetes.</p>
-                    </div>
-                    <div class="project">
-                        <div class="project-header">
-                            <span class="project-name">Prediction Benchmark</span>
-                            <a href="#" class="project-link">Docs coming soon →</a>
-                        </div>
-                        <p class="project-desc">A "true AGI" prediction benchmark. Using Pluto, I run standardized tests across different models with the same tools and the same data to see which systems can predict the correct value most consistently.</p>
-                    </div>
-                    <div class="project">
-                        <div class="project-header">
-                            <span class="project-name">Career-Hunter</span>
-                            <a href="https://career-hunter.com" target="_blank" class="project-link">career-hunter.com →</a>
-                        </div>
-                        <p class="project-desc">AI-powered automated job search agent.</p>
-                    </div>
-                </div>
-            </div>
+        </header>
 
-            <!-- Computational Art Section -->
-            <div class="section">
-                <h2 class="section-title">Computational Art</h2>
-                <div class="art-grid" id="art-grid"></div>
-            </div>
-            
-            <!-- Blog Section -->
-            <div class="section">
-                <h2 class="section-title">Blog</h2>
-                <div class="blog-posts">
-                    <div class="blog-post">
-                        <div class="blog-header">
-                            <span class="blog-date">2025.01.15</span>
-                            <span class="blog-category">AI/ML</span>
+        <div id="main-content">
+            <!-- About -->
+            <section class="section about">
+                <h2 class="section-title">About</h2>
+                <p>Product engineer and founder of EK Labs, the company behind dot-ai. Interested in AI and agentic systems, but also intrigued by hardware—autonomous drones, RC devices that think for themselves, and anything that blurs the line between code and the physical world.</p>
+            </section>
+
+            <!-- Projects Graveyard -->
+            <section class="section">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <div class="project-status live"></div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <span class="project-name"><a href="https://dot-ai.app" target="_blank">dot-ai</a></span>
+                                <span class="project-label live">live</span>
+                            </div>
+                            <p class="project-desc">Chat app where you can communicate with all the latest models regardless of provider.</p>
                         </div>
-                        <h3 class="blog-title">Building Agentic Systems with LLMs</h3>
-                        <p class="blog-excerpt">Exploring the architecture behind autonomous AI agents and how to create systems that can reason, plan, and execute tasks independently...</p>
-                        <a href="#" class="blog-link" onclick="showBlogPost('agentic-systems'); return false;">Read more →</a>
                     </div>
-                    
-                    <div class="blog-post">
-                        <div class="blog-header">
-                            <span class="blog-date">2024.12.20</span>
-                            <span class="blog-category">Platform Engineering</span>
+
+                    <div class="project-item">
+                        <div class="project-status dead"></div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <span class="project-name"><a href="https://github.com/theworksofvon/tracepulse" target="_blank">TracePulse</a></span>
+                                <span class="project-label dead">dead</span>
+                            </div>
+                            <p class="project-desc">AI-powered production debugging CLI tool providing real-time context for coding assistants.</p>
                         </div>
-                        <h3 class="blog-title">Event-Driven Architecture with NATS JetStream</h3>
-                        <p class="blog-excerpt">How we achieved zero event loss and real-time data processing by migrating to NATS JetStream across our microservices...</p>
-                        <a href="#" class="blog-link" onclick="showBlogPost('event-driven'); return false;">Read more →</a>
                     </div>
-                    
-                    <div class="blog-post">
-                        <div class="blog-header">
-                            <span class="blog-date">2024.11.08</span>
-                            <span class="blog-category">DevOps</span>
+
+                    <div class="project-item">
+                        <div class="project-status dead"></div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <span class="project-name"><a href="https://plutopredicts.com" target="_blank">PlutoPredicts</a></span>
+                                <span class="project-label dead">dead</span>
+                            </div>
+                            <p class="project-desc">AI-powered NBA analytics platform that fine-tunes LLMs on historical player data.</p>
                         </div>
-                        <h3 class="blog-title">Self-Hosting AI Models on Kubernetes</h3>
-                        <p class="blog-excerpt">A guide to deploying and scaling LLMs on your own K8s cluster, including resource optimization and cost analysis...</p>
-                        <a href="#" class="blog-link" onclick="showBlogPost('self-hosting'); return false;">Read more →</a>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-status dead"></div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <span class="project-name">Prediction Benchmark</span>
+                                <span class="project-label dead">dead</span>
+                            </div>
+                            <p class="project-desc">A "true AGI" prediction benchmark using standardized tests across different models.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-status dead"></div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <span class="project-name"><a href="https://career-hunter.com" target="_blank">Career-Hunter</a></span>
+                                <span class="project-label dead">dead</span>
+                            </div>
+                            <p class="project-desc">AI-powered automated job search agent.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Experience Section -->
-            <div class="section">
+            </section>
+
+            <!-- Blog -->
+            <section class="section">
+                <h2 class="section-title">Writing</h2>
+                <div class="blog-list" id="blog-list">
+                    <div class="blog-item" onclick="showBlogPost('agentic-systems')">
+                        <div class="blog-meta">
+                            <span>2025.01.15</span>
+                            <span>AI/ML</span>
+                        </div>
+                        <div class="blog-title">Building Agentic Systems with LLMs</div>
+                    </div>
+
+                    <div class="blog-item" onclick="showBlogPost('event-driven')">
+                        <div class="blog-meta">
+                            <span>2024.12.20</span>
+                            <span>Platform Engineering</span>
+                        </div>
+                        <div class="blog-title">Event-Driven Architecture with NATS JetStream</div>
+                    </div>
+
+                    <div class="blog-item" onclick="showBlogPost('self-hosting')">
+                        <div class="blog-meta">
+                            <span>2024.11.08</span>
+                            <span>DevOps</span>
+                        </div>
+                        <div class="blog-title">Self-Hosting AI Models on Kubernetes</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="section">
                 <h2 class="section-title">Experience</h2>
-                <div class="experience">
+                <div class="experience-list">
                     <div class="experience-item">
-                        <div class="experience-title">Software Engineer 2</div>
-                        <div class="experience-company">EDF Renewables – Powerflex</div>
-                        <div class="experience-date">July 2024 – July 2025</div>
-                        <p>Led company-wide adoption of NATS JetStream, architecting event-driven microservices platform. Promoted from Intern to SE2 in 18 months. Designed auth layer achieving SOC 2 compliance.</p>
+                        <span class="experience-role">Founder</span>
+                        <span class="experience-company">EK Labs</span>
+                        <span class="experience-date">Present</span>
                     </div>
-                    
+
                     <div class="experience-item">
-                        <div class="experience-title">Software Engineering Intern</div>
-                        <div class="experience-company">EDF Renewables – Powerflex</div>
-                        <div class="experience-date">July 2022 – September 2022</div>
-                        <p>Led automation project streamlining site commissioning, reducing deployment time by 50%. Built FastAPI backend and deployed AI-powered NBA prediction model.</p>
+                        <span class="experience-role">Software Engineer 3</span>
+                        <span class="experience-company">EDF Renewables - Powerflex</span>
+                        <span class="experience-date">July 2024 - July 2025</span>
+                    </div>
+
+                    <div class="experience-item">
+                        <span class="experience-role">Software Engineer</span>
+                        <span class="experience-company">EDF Renewables - Powerflex</span>
+                        <span class="experience-date">July 2022 - September 2022</span>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with passion.</p>
+        </footer>
     </div>
 
-    <!-- ============================================ -->
-    <!-- MATRIX EFFECT SCRIPT                         -->
-    <!-- ============================================ -->
-    <script id="matrix-effect">
-        // Matrix rain effect
-        const canvas = document.getElementById('matrix');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        const chars = '01';
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
-        const drops = Array(Math.floor(columns)).fill(1);
-        
-        function draw() {
-            ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            ctx.fillStyle = '#00ff41';
-            ctx.font = fontSize + 'px monospace';
-            
-            for (let i = 0; i < drops.length; i++) {
-                const text = chars[Math.floor(Math.random() * chars.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-        
-        setInterval(draw, 35);
-        
-        // Resize handler
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
-
-    <!-- ============================================ -->
-    <!-- MOUSE GLOW EFFECT SCRIPT                     -->
-    <!-- ============================================ -->
-    <script id="mouse-glow-effect">
-        // Mouse glow effect
-        document.addEventListener('mousemove', (e) => {
-            document.body.style.setProperty('--mouse-x', e.clientX + 'px');
-            document.body.style.setProperty('--mouse-y', e.clientY + 'px');
-        });
-    </script>
-
-    <!-- ============================================ -->
-    <!-- BLOG LOADER                                  -->
-    <!-- ============================================ -->
+    <!-- Blog Loader -->
     <script src="/blog/blog-loader.js"></script>
 
-    <!-- ============================================ -->
-    <!-- P5.JS + ART SKETCHES                         -->
-    <!-- ============================================ -->
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
-    <script src="/art/art-loader.js"></script>
-
-    <!-- ============================================ -->
-    <!-- BLOG NAVIGATION SCRIPT                       -->
-    <!-- ============================================ -->
-    <script id="blog-navigation">
+    <!-- Blog Navigation -->
+    <script>
         let originalContent = '';
-        
+
         async function showBlogPost(postId) {
             const post = await window.blogLoader.getPost(postId);
             if (!post) {
                 console.error('Blog post not found:', postId);
                 return;
             }
-            
+
             const mainContent = document.getElementById('main-content');
-            
+
             if (!originalContent) {
                 originalContent = mainContent.innerHTML;
             }
-            
-            // Stop any running art sketches before replacing DOM
-            if (window.artLoader && window.artLoader.clearInstances) {
-                try { window.artLoader.clearInstances(); } catch (e) { console.error('Art clear failed', e); }
-            }
-            
+
             mainContent.innerHTML = `
                 <div class="blog-full-post">
-                    <nav class="blog-nav">
-                        <button class="back-button" onclick="showHomePage()">
-                            ← Back to home
-                        </button>
-                        <span style="color: var(--secondary);">${post.readTime}</span>
-                    </nav>
-                    
+                    <button class="back-button" onclick="showHomePage()">
+                        ← Back
+                    </button>
+
                     <article>
-                        <header class="blog-post-header">
-                            <h1 class="blog-post-title">${post.title}</h1>
-                            <div class="blog-post-meta">
-                                <span>${post.date}</span>
-                                <span class="blog-category">${post.category}</span>
-                            </div>
-                        </header>
-                        
+                        <h1 class="blog-post-title">${post.title}</h1>
+                        <div class="blog-post-meta">
+                            <span>${post.date}</span>
+                            <span>${post.category}</span>
+                            <span>${post.readTime}</span>
+                        </div>
+
                         <div class="blog-post-content">
                             ${post.content}
                         </div>
-                        
-                        <footer class="blog-footer">
-                            <p class="share-text">Enjoyed this post? Share your thoughts!</p>
-                            <div class="contact-links">
-                                <a href="mailto:davontaejackson67@gmail.com">Email me</a>
-                                <a href="https://github.com/theworksofvon" target="_blank">Follow on GitHub</a>
-                            </div>
-                        </footer>
                     </article>
                 </div>
             `;
-            
-            // Scroll to top
+
             window.scrollTo(0, 0);
         }
-        
+
         function showHomePage() {
             const mainContent = document.getElementById('main-content');
             mainContent.innerHTML = originalContent;
             window.scrollTo(0, 0);
-            // Reinitialize computational art after restoring home
-            if (window.artLoader && window.artLoader.renderGrid) {
-                try { window.artLoader.renderGrid(); } catch (e) { console.error('Art render failed', e); }
-            }
         }
 
         // Initialize blog posts dynamically
         async function initializeBlog() {
             try {
                 const posts = await window.blogLoader.getPosts();
-                const blogPostsContainer = document.querySelector('.blog-posts');
-                
-                if (blogPostsContainer && posts.length > 0) {
-                    blogPostsContainer.innerHTML = posts.map(post => `
-                        <div class="blog-post">
-                            <div class="blog-header">
-                                <span class="blog-date">${post.date}</span>
-                                <span class="blog-category">${post.category}</span>
+                const blogList = document.getElementById('blog-list');
+
+                if (blogList && posts.length > 0) {
+                    blogList.innerHTML = posts.map(post => `
+                        <div class="blog-item" onclick="showBlogPost('${post.id}')">
+                            <div class="blog-meta">
+                                <span>${post.date}</span>
+                                <span>${post.category}</span>
                             </div>
-                            <h3 class="blog-title">${post.title}</h3>
-                            <p class="blog-excerpt">${post.excerpt}</p>
-                            <a href="#" class="blog-link" onclick="showBlogPost('${post.id}'); return false;">Read more →</a>
+                            <div class="blog-title">${post.title}</div>
                         </div>
                     `).join('');
                 }
@@ -933,7 +585,6 @@
             }
         }
 
-        // Initialize blog when page loads
         document.addEventListener('DOMContentLoaded', initializeBlog);
     </script>
 </body>
