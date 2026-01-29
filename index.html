@@ -117,6 +117,11 @@
             background: #dc2626;
         }
 
+        .project-status.in-development {
+            background: #f97316;
+            box-shadow: 0 0 6px rgba(249, 115, 22, 0.5);
+        }
+
         .project-content {
             flex: 1;
         }
@@ -161,6 +166,11 @@
         .project-label.archived {
             background: rgba(239, 68, 68, 0.15);
             color: #f87171;
+        }
+
+        .project-label.in-development {
+            background: rgba(249, 115, 22, 0.15);
+            color: #fb923c;
         }
 
         .project-desc {
@@ -403,6 +413,17 @@
                                 <span class="project-label live">live</span>
                             </div>
                             <p class="project-desc">Chat app where you can communicate with all the latest models regardless of provider.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-status in-development"></div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <span class="project-name"><a href="https://github.com/theworksofvon/pulse" target="_blank">Pulse</a></span>
+                                <span class="project-label in-development">in development</span>
+                            </div>
+                            <p class="project-desc">Open source LLM observability platform for tracking expenses, metrics, running evals, and testing prompts.</p>
                         </div>
                     </div>
 
