@@ -39,14 +39,6 @@ class BlogLoader {
     getFallbackPosts() {
         return [
             {
-                id: 'agentic-systems',
-                title: 'Building Agentic Systems with LLMs',
-                date: '2025.01.15',
-                category: 'AI/ML',
-                readTime: '8 min read',
-                excerpt: 'Exploring the architecture behind autonomous AI agents and how to create systems that can reason, plan, and execute tasks independently...'
-            },
-            {
                 id: 'event-driven',
                 title: 'Event-Driven Architecture with NATS JetStream',
                 date: '2024.12.20',
