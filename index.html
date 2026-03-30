@@ -179,47 +179,6 @@
             margin-top: 0.25rem;
         }
 
-        /* Blog */
-        .blog-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .blog-item {
-            cursor: pointer;
-            transition: opacity 0.2s ease;
-        }
-
-        .blog-item:hover {
-            opacity: 0.7;
-        }
-
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.8rem;
-            color: #525252;
-            margin-bottom: 0.25rem;
-        }
-
-        .blog-title {
-            font-weight: 700;
-            color: #e5e5e5;
-        }
-
-        .blog-title a {
-            color: inherit;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s ease;
-        }
-
-        .blog-title a:hover {
-            border-bottom-color: #e5e5e5;
-        }
-
         /* Experience */
         .experience-list {
             display: flex;
@@ -257,113 +216,6 @@
             font-size: 0.8rem;
         }
 
-        /* Blog Full Post View */
-        .blog-full-post {
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #737373;
-            text-decoration: none;
-            font-size: 0.85rem;
-            margin-bottom: 2rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-family: 'Space Mono', monospace;
-            transition: color 0.2s ease;
-        }
-
-        .back-button:hover {
-            color: #e5e5e5;
-        }
-
-        .blog-post-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #e5e5e5;
-        }
-
-        .blog-post-meta {
-            display: flex;
-            gap: 1rem;
-            color: #525252;
-            font-size: 0.85rem;
-            margin-bottom: 2rem;
-        }
-
-        .blog-post-content {
-            color: #a3a3a3;
-        }
-
-        .blog-post-content h2 {
-            font-size: 1.2rem;
-            margin: 2rem 0 1rem 0;
-            color: #e5e5e5;
-        }
-
-        .blog-post-content h3 {
-            font-size: 1rem;
-            margin: 1.5rem 0 0.75rem 0;
-            color: #e5e5e5;
-        }
-
-        .blog-post-content p {
-            margin-bottom: 1rem;
-        }
-
-        .blog-post-content pre {
-            background: #171717;
-            border: 1px solid #262626;
-            border-radius: 4px;
-            padding: 1rem;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-            font-size: 0.85rem;
-        }
-
-        .blog-post-content code {
-            background: #171717;
-            padding: 0.15rem 0.3rem;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-
-        .blog-post-content pre code {
-            background: none;
-            padding: 0;
-        }
-
-        .blog-post-content blockquote {
-            border-left: 2px solid #262626;
-            padding-left: 1rem;
-            margin: 1.5rem 0;
-            color: #737373;
-            font-style: italic;
-        }
-
-        .blog-post-content ul, .blog-post-content ol {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-        }
-
-        .blog-post-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .hidden {
-            display: none;
-        }
-
         /* Responsive */
         @media (max-width: 640px) {
             .container {
@@ -385,7 +237,7 @@
         <!-- Header -->
         <header class="header">
             <h1 class="name">Davontae Jackson</h1>
-            <p class="tagline">Engineer & Writer</p>
+            <p class="tagline">Engineer</p>
             <div class="social-links">
                 <a href="mailto:jacksondavontae19@gmail.com">email</a>
                 <a href="https://github.com/theworksofvon" target="_blank">github</a>
@@ -417,49 +269,27 @@
                     </div>
 
                     <div class="project-item">
-                        <div class="project-status in-development"></div>
+                        <div class="project-status live"></div>
                         <div class="project-content">
                             <div class="project-header">
-                                <span class="project-name"><a href="https://github.com/theworksofvon/pulse" target="_blank">Pulse</a></span>
-                                <span class="project-label in-development">in development</span>
+                                <span class="project-name"><a href="https://usepulse.dev" target="_blank">Pulse</a></span>
+                                <span class="project-label live">live</span>
                             </div>
                             <p class="project-desc">Open source LLM observability platform for tracking expenses, metrics, running evals, and testing prompts.</p>
                         </div>
                     </div>
 
                     <div class="project-item">
-                        <div class="project-status archived"></div>
+                        <div class="project-status in-development"></div>
                         <div class="project-content">
                             <div class="project-header">
-                                <span class="project-name"><a href="https://github.com/theworksofvon/tracepulse" target="_blank">TracePulse</a></span>
-                                <span class="project-label archived">archived</span>
+                                <span class="project-name"><a href="https://github.com/theworksofvon/aether" target="_blank">Aether</a></span>
+                                <span class="project-label in-development">in development</span>
                             </div>
-                            <p class="project-desc">AI-powered production debugging CLI tool providing real-time context for coding assistants.</p>
+                            <p class="project-desc">Edge-autonomous drone platform built in C++ on ROS 2, running AI inference and navigation offline on a Raspberry Pi 5.</p>
                         </div>
                     </div>
 
-                </div>
-            </section>
-
-            <!-- Blog -->
-            <section class="section">
-                <h2 class="section-title">Writing</h2>
-                <div class="blog-list" id="blog-list">
-                    <div class="blog-item" onclick="showBlogPost('event-driven')">
-                        <div class="blog-meta">
-                            <span>2024.12.20</span>
-                            <span>Platform Engineering</span>
-                        </div>
-                        <div class="blog-title">Event-Driven Architecture with NATS JetStream</div>
-                    </div>
-
-                    <div class="blog-item" onclick="showBlogPost('self-hosting')">
-                        <div class="blog-meta">
-                            <span>2024.11.08</span>
-                            <span>DevOps</span>
-                        </div>
-                        <div class="blog-title">Self-Hosting AI Models on Kubernetes</div>
-                    </div>
                 </div>
             </section>
 
@@ -487,79 +317,5 @@
         </footer>
     </div>
 
-    <!-- Blog Loader -->
-    <script src="/blog/blog-loader.js"></script>
-
-    <!-- Blog Navigation -->
-    <script>
-        let originalContent = '';
-
-        async function showBlogPost(postId) {
-            const post = await window.blogLoader.getPost(postId);
-            if (!post) {
-                console.error('Blog post not found:', postId);
-                return;
-            }
-
-            const mainContent = document.getElementById('main-content');
-
-            if (!originalContent) {
-                originalContent = mainContent.innerHTML;
-            }
-
-            mainContent.innerHTML = `
-                <div class="blog-full-post">
-                    <button class="back-button" onclick="showHomePage()">
-                        ← Back
-                    </button>
-
-                    <article>
-                        <h1 class="blog-post-title">${post.title}</h1>
-                        <div class="blog-post-meta">
-                            <span>${post.date}</span>
-                            <span>${post.category}</span>
-                            <span>${post.readTime}</span>
-                        </div>
-
-                        <div class="blog-post-content">
-                            ${post.content}
-                        </div>
-                    </article>
-                </div>
-            `;
-
-            window.scrollTo(0, 0);
-        }
-
-        function showHomePage() {
-            const mainContent = document.getElementById('main-content');
-            mainContent.innerHTML = originalContent;
-            window.scrollTo(0, 0);
-        }
-
-        // Initialize blog posts dynamically
-        async function initializeBlog() {
-            try {
-                const posts = await window.blogLoader.getPosts();
-                const blogList = document.getElementById('blog-list');
-
-                if (blogList && posts.length > 0) {
-                    blogList.innerHTML = posts.map(post => `
-                        <div class="blog-item" onclick="showBlogPost('${post.id}')">
-                            <div class="blog-meta">
-                                <span>${post.date}</span>
-                                <span>${post.category}</span>
-                            </div>
-                            <div class="blog-title">${post.title}</div>
-                        </div>
-                    `).join('');
-                }
-            } catch (error) {
-                console.error('Failed to initialize blog:', error);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', initializeBlog);
-    </script>
 </body>
 </html>
